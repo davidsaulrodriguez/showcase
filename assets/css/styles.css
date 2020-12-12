@@ -32,3 +32,10 @@
 .input-field .prefix.active {
   color: #000;
 }
+
+.brand-logo {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
