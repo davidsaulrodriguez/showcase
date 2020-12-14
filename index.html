@@ -4,11 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
         <title>Git Resume</title>
-        <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
         <link href="./assets/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
     </head>
     <body>
 
@@ -18,14 +16,14 @@
             <div class="nav-wrapper container">
                 <a id="logo-container" href="./" class="center brand-logo">Git Resume</a>
                 <ul class="right hide-on-med-and-down">
-                    <!-- <li>
-                        <a href="#">Navbar Link</a>
-                    </li> -->
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
                     <li>
-                        <a href="#">GitHub</a>
+                        <a href="./" rel="noopener noreferrer">Home</a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/davidsaulrodriguez/git-resume" target="_blank" rel="noopener noreferrer">Source Code</a>
                     </li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger">
@@ -40,14 +38,14 @@
 
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
-                <br/><br/>
-                <h1 class="header center purple-text darken-4">A Proffesional Project Resume In Seconds</h1>
-                <div class="row center">
-                    <h5 class="header col s12 light">
-                        <p>GitHub is a great place to store all of your coding projects, but prospective employers dont want to sift through all of your repositories to get an idea of all of your work. Show off all of your hardwork in an easy to read way with Git Resume!</p>
-                    </h5>
+                <div class="row s12">
+                    <h1 class="header center purple-text darken-4">A Professional and Interactive Git Resume In Seconds!</h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light">
+                            <p>GitHub is a great place to store all of your coding projects, but prospective employers dont want to sift through all of your repositories to get an idea of all of your work. Show off all of your hardwork in an easy to read way with Git Resume!</p>
+                        </h5>
+                    </div>
                 </div>
-                <br/><br/>
             </div>
         </div>
 
@@ -57,43 +55,83 @@
 
         <div class="row">
             <div class="col s12 m8 l6 offset-m2 offset-l3">
-                <h5 class="center">Create Your Free Resume Today!</h5>
+                <h5 class="center">Create An Interactive Git Resume!</h5>
                 <div class="card" style="overflow: visible;">
+                    <div class="card-image">
+                        <img src="./assets/imgs/sample-1.jpg" id="userimg" alt="">
+                    </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4 center">We need some info<i class="material-icons right">help</i>
+                        <span class="card-title activator grey-text text-darken-4 center" id="users-name">Enter Some Required Information<i class="material-icons right" title="Learn why we need this info!">help</i>
                         </span>
                         <div class="row">
-                            <form class="col" id="user-form">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="icon_prefix" type="text" class="validate">
-                                    <label for="icon_prefix">First</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix"></i>
-                                    <input id="icon_telephone" type="text" class="validate">
-                                    <label for="icon_telephone">Last</label>
-                                </div>
+                            <form class="col s12" id="user-form">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="username" type="text" class="validate" pattern="[A-Za-z0-9_]{0,38}$" required>
+                                    <label for="username">Username</label>
+                                </div>
+                                <div class="input-field col s6">
                                     <i class="material-icons prefix">email</i>
-                                    <input id="icon_prefix" type="email" class="validate">
-                                    <label for="icon_prefix">Email</label>
+                                    <input id="email" type="email" class="validate" required>
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">phone</i>
+                                    <input id="phone" type="text" class="validate" required>
+                                    <label for="phone">Phone</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">work</i>
-                                    <input id="icon_telephone" type="tel" class="validate">
-                                    <label for="icon_telephone">GitHub Username</label>
+                                    <i class="material-icons prefix">text_fields</i>
+                                    <textarea name="user-profile"
+                                    class="materialize-textarea"
+                                    id="user-profile"
+                                    cols="40"
+                                    rows="10"
+                                    maxlength="500"
+                                    placeholder="Sum up your experience in 500 characters or less."
+                                    required></textarea>
+                                    <label for="user-profile">Profile</label>
                                 </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">home</i>
+                                    <input id="address" type="text" class="validate" placeholder="123 Capitol Ave. Bridgeport, CT 06606" required>
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">view_quilt</i>
+                                    <select class="icons" required>
+                                      <option value="" disabled selected>Choose your theme</option>
+                                      <option value="resume.html" data-icon="./assets/imgs/dg-theme-icon.png">Amarz94's "Dark Grey" Theme</option>
+                                      <option value="default-resume.html" data-icon="./assets/imgs/mc-theme-icon.png">David's "Material Cards" Theme</option>
+                                    </select>
+                                    <label>Choose A Theme</label>
+                                  </div>
                                 <div class="input-field col right">
-                                    <button type="submit" class="btn purple">Create</button>
+                                    <button type="submit" id="submit" class="btn purple">Create</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="card-reveal" style="display: none; transform: translateY(0%);">
-                        <span class="card-title grey-text text-darken-4">Help<i class="material-icons right">close</i>
+                        <span class="card-title grey-text text-darken-4">Why We Need This Info<i class="material-icons right">close</i>
                         </span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        <p>In order to create your interactive resume we need certain information from you that we cannot retrieve from your GitHub profile.</p>
+                        <p>This infomation would include your:</p>
+                        <ol>
+                            <li>GitHub Username</li>
+                            <li>Email Address</li>
+                            <li>Phone Number</li>
+                            <li>Profile Summary</li>
+                            <li>Home Address</li>
+                        </ol>
+                        <h5>Why do we need your address?</h5>
+                        <p>This information is not provided via GitHub's public API. We need this information in order to populate your contact info in regards to your address.</p>
+                        <h5>Why do we need your address?</h5>
+                        <p>This information is not provided via GitHub's public API. We need this information in order to populate your contact info in regards to your phone number.</p>
+                        <h5>We dont need your name.</h5>
+                        <p>We do not need your name as we will pull this from your GitHub profile. If you don't use your real name on GitHub, we would suggest that you change this on GitHub.</p>
+                        <h5>We dont need your Twitter username.</h5>
+                        <p>We do not need your Twitter username. If this is available we will pull this from your GitHub profile as well.</p>
                     </div>
                     <div class="card-action">
                         <a href="#terms" class="modal-trigger" data-target="terms">Terms</a>
@@ -117,7 +155,7 @@
                             </h4>
                             <h5 class="center">Painless Setup</h5>
 
-                            <p class="light center">We do all the work for you! Your name and GitHub username is all we need!</p>
+                            <p class="light center">We do all the work for you. Simply fill out the form and submit it.</p>
                         </div>
                     </div>
 
@@ -128,7 +166,7 @@
                             </h4>
                             <h5 class="center">Multiple Formats</h5>
 
-                            <p class="light center">Coming Soon! - Want to express just how unique you are? choose from one of our many resume styles!</p>
+                            <p class="light center">Want to express just your uniqueness? Simply select a theme!</p>
                         </div>
                     </div>
 
@@ -154,17 +192,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
-                        <h5 class="white-text">Footer Content</h5>
-                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                        <h5 class="white-text">Git Resume</h5>
+                        <p class="grey-text text-lighten-4">Use your GitHub profile and information to dynamically build a simple and beautiful, digital and interactive resume to show off to your next prospective employer.</p>
                     </div>
                     <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Links</h5>
+                        <h5 class="white-text">API's Used</h5>
+                        <ul>
+                            <li>
+                                <a href="https://docs.github.com/en/free-pro-team@latest/rest" target="_blank" rel="noopener noreferrer">GitHub API</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    <p>© 2020 Git Resume<a class="grey-text text-lighten-4 right" href="#" title="Report A Bug"><i class="material-icons small">bug_report</i></a></p>
+                    <p>© 2020 Git Resume<a class="grey-text text-lighten-4 right" href="https://github.com/davidsaulrodriguez/git-resume/issues" target="_blank" title="Report A Bug">
+                            <i class="material-icons small">bug_report</i>
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
@@ -177,32 +223,37 @@
             <div class="modal-content">
                 <h4 class="center">Terms and Conditions</h4>
                 <h4 class="center">Welcome to Git Resume</h4>
-                <p>These terms of service outline the rules and regulations for the use of Git Resume's Website.</p> <br /> 
-                <span style="text-transform: capitalize;"> Git Resume</span> is located at:<br /> 
-                <address>992 Beaverdam Creek Road Gray Court <br />29645 - SC , United States of America<br />
+                <p>These terms of service outline the rules and regulations for the use of Git Resume's Website.</p>
+                <br/>
+                <span style="text-transform: capitalize;">
+                    Git Resume</span>
+                is located at:<br/>
+                <address>992 Beaverdam Creek Road Gray Court
+                    <br/>29645 - SC , United States of America<br/>
                 </address>
                 <p>By accessing this website we assume you accept these terms of service in full. Do not continue to use Git Resume's website 
-                if you do not accept all of the terms of service stated on this page.</p>
+                                    if you do not accept all of the terms of service stated on this page.</p>
                 <p>The following terminology applies to these Terms of Service, Privacy Statement and Disclaimer Notice
-                and any or all Agreements: "Client", "You" and "Your" refers to you, the person accessing this website
-                and accepting the Company's terms of service. "The Company", "Ourselves", "We", "Our" and "Us", refers
-                to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves, or either the Client
-                or ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake
-                the process of our assistance to the Client in the most appropriate manner, whether by formal meetings
-                of a fixed duration, or any other means, for the express purpose of meeting the Client's needs in respect
-                of provision of the Company's stated services/products, in accordance with and subject to, prevailing law
-                of United States of America. Any use of the above terminology or other words in the singular, plural,
-                capitalisation and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
-            <h4>Cookies</h4>
+                                    and any or all Agreements: "Client", "You" and "Your" refers to you, the person accessing this website
+                                    and accepting the Company's terms of service. "The Company", "Ourselves", "We", "Our" and "Us", refers
+                                    to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves, or either the Client
+                                    or ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake
+                                    the process of our assistance to the Client in the most appropriate manner, whether by formal meetings
+                                    of a fixed duration, or any other means, for the express purpose of meeting the Client's needs in respect
+                                    of provision of the Company's stated services/products, in accordance with and subject to, prevailing law
+                                    of United States of America. Any use of the above terminology or other words in the singular, plural,
+                                    capitalisation and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
+                <h4>Cookies</h4>
                 <p>We employ the use of cookies. By using Git Resume's website you consent to the use of cookies 
-                in accordance with Git Resume's privacy policy.</p><p>Most of the modern day interactive web sites
-                use cookies to enable us to retrieve user details for each visit. Cookies are used in some areas of our site
-                to enable the functionality of this area and ease of use for those people visiting. Some of our 
-                affiliate / advertising partners may also use cookies.</p>
-            <h4>License</h4>
+                                    in accordance with Git Resume's privacy policy.</p>
+                <p>Most of the modern day interactive web sites
+                                    use cookies to enable us to retrieve user details for each visit. Cookies are used in some areas of our site
+                                    to enable the functionality of this area and ease of use for those people visiting. Some of our 
+                                    affiliate / advertising partners may also use cookies.</p>
+                <h4>License</h4>
                 <p>Unless otherwise stated, Git Resume and/or it's licensors own the intellectual property rights for
-                all material on Git Resume. All intellectual property rights are reserved. You may view and/or print
-                pages from https://gitresume.bsdadm.com for your own personal use subject to restrictions set in these terms of service.</p>
+                                    all material on Git Resume. All intellectual property rights are reserved. You may view and/or print
+                                    pages from https://gitresume.bsdadm.com for your own personal use subject to restrictions set in these terms of service.</p>
                 <p>You must not:</p>
                 <ol>
                     <li>Republish material from https://gitresume.bsdadm.com</li>
@@ -210,30 +261,30 @@
                     <li>Reproduce, duplicate or copy material from https://gitresume.bsdadm.com</li>
                 </ol>
                 <p>Redistribute content from Git Resume (unless content is specifically made for redistribution).</p>
-            <h4>Hyperlinking to our Content</h4>
+                <h4>Hyperlinking to our Content</h4>
                 <ol>
                     <li>The following organizations may link to our Web site without prior written approval:
                         <ol>
-                        <li>Government agencies;</li>
-                        <li>Search engines;</li>
-                        <li>News organizations;</li>
-                        <li>Online directory distributors when they list us in the directory may link to our Web site in the same
-                            manner as they hyperlink to the Web sites of other listed businesses; and</li>
-                        <li>Systemwide Accredited Businesses except soliciting non-profit organizations, charity shopping malls,
-                            and charity fundraising groups which may not hyperlink to our Web site.</li>
+                            <li>Government agencies;</li>
+                            <li>Search engines;</li>
+                            <li>News organizations;</li>
+                            <li>Online directory distributors when they list us in the directory may link to our Web site in the same
+                                                            manner as they hyperlink to the Web sites of other listed businesses; and</li>
+                            <li>Systemwide Accredited Businesses except soliciting non-profit organizations, charity shopping malls,
+                                                            and charity fundraising groups which may not hyperlink to our Web site.</li>
                         </ol>
                     </li>
                 </ol>
                 <ol start="2">
                     <li>These organizations may link to our home page, to publications or to other Web site information so long
-                        as the link: (a) is not in any way misleading; (b) does not falsely imply sponsorship, endorsement or
-                        approval of the linking party and its products or services; and (c) fits within the context of the linking
-                        party's site.
+                                                as the link: (a) is not in any way misleading; (b) does not falsely imply sponsorship, endorsement or
+                                                approval of the linking party and its products or services; and (c) fits within the context of the linking
+                                                party's site.
                     </li>
                     <li>We may consider and approve in our sole discretion other link requests from the following types of organizations:
                         <ol>
                             <li>commonly-known consumer and/or business information sources such as Chambers of Commerce, American
-                                Automobile Association, AARP and Consumers Union;</li>
+                                                                Automobile Association, AARP and Consumers Union;</li>
                             <li>dot.com community sites;</li>
                             <li>associations or other groups representing charities, including charity giving sites,</li>
                             <li>online directory distributors;</li>
@@ -244,23 +295,24 @@
                     </li>
                 </ol>
                 <p>We will approve link requests from these organizations if we determine that: (a) the link would not reflect
-                unfavorably on us or our accredited businesses (for example, trade associations or other organizations
-                representing inherently suspect types of business, such as work-at-home opportunities, shall not be allowed
-                to link); (b)the organization does not have an unsatisfactory record with us; (c) the benefit to us from
-                the visibility associated with the hyperlink outweighs the absence of Git Resume; and (d) where the
-                link is in the context of general resource information or is otherwise consistent with editorial content
-                in a newsletter or similar product furthering the mission of the organization.</p>
+                                    unfavorably on us or our accredited businesses (for example, trade associations or other organizations
+                                    representing inherently suspect types of business, such as work-at-home opportunities, shall not be allowed
+                                    to link); (b)the organization does not have an unsatisfactory record with us; (c) the benefit to us from
+                                    the visibility associated with the hyperlink outweighs the absence of Git Resume; and (d) where the
+                                    link is in the context of general resource information or is otherwise consistent with editorial content
+                                    in a newsletter or similar product furthering the mission of the organization.</p>
 
                 <p>These organizations may link to our home page, to publications or to other Web site information so long as
-                the link: (a) is not in any way misleading; (b) does not falsely imply sponsorship, endorsement or approval
-                of the linking party and it products or services; and (c) fits within the context of the linking party's
-                site.</p>
+                                    the link: (a) is not in any way misleading; (b) does not falsely imply sponsorship, endorsement or approval
+                                    of the linking party and it products or services; and (c) fits within the context of the linking party's
+                                    site.</p>
 
                 <p>If you are among the organizations listed in paragraph 2 above and are interested in linking to our website,
-                you must notify us by sending an e-mail to <a href="mailto:support@bsdadm.com" title="send an email to support@bsdadm.com">support@bsdadm.com</a>.
-                Please include your name, your organization name, contact information (such as a phone number and/or e-mail
-                address) as well as the URL of your site, a list of any URLs from which you intend to link to our Web site,
-                and a list of the URL(s) on our site to which you would like to link. Allow 2-3 weeks for a response.</p>
+                                    you must notify us by sending an e-mail to
+                    <a href="mailto:support@bsdadm.com" title="send an email to support@bsdadm.com">support@bsdadm.com</a>.
+                                        Please include your name, your organization name, contact information (such as a phone number and/or e-mail
+                                        address) as well as the URL of your site, a list of any URLs from which you intend to link to our Web site,
+                                        and a list of the URL(s) on our site to which you would like to link. Allow 2-3 weeks for a response.</p>
 
                 <p>Approved organizations may hyperlink to our Web site as follows:</p>
 
@@ -268,45 +320,46 @@
                     <li>By use of our corporate name; or</li>
                     <li>By use of the uniform resource locator (Web address) being linked to; or</li>
                     <li>By use of any other description of our Web site or material being linked to that makes sense within the
-                        context and format of content on the linking party's site.</li>
+                                                context and format of content on the linking party's site.</li>
                 </ol>
                 <p>No use of Git Resume's logo or other artwork will be allowed for linking absent a trademark license
-                agreement.</p>
-            <h4>Reservation of Rights</h4>
+                                    agreement.</p>
+                <h4>Reservation of Rights</h4>
                 <p>We reserve the right at any time and in its sole discretion to request that you remove all links or any particular
-                link to our Web site. You agree to immediately remove all links to our Web site upon such request. We also
-                reserve the right to amend these terms of service and its linking policy at any time. By continuing
-                to link to our Web site, you agree to be bound to and abide by these linking terms of service.</p>
-            <h4>Removal of links from our website</h4>
+                                    link to our Web site. You agree to immediately remove all links to our Web site upon such request. We also
+                                    reserve the right to amend these terms of service and its linking policy at any time. By continuing
+                                    to link to our Web site, you agree to be bound to and abide by these linking terms of service.</p>
+                <h4>Removal of links from our website</h4>
                 <p>If you find any link on our Web site or any linked web site objectionable for any reason, you may contact
-                us about this. We will consider requests to remove links but will have no obligation to do so or to respond
-                directly to you.</p>
+                                    us about this. We will consider requests to remove links but will have no obligation to do so or to respond
+                                    directly to you.</p>
                 <p>Whilst we endeavour to ensure that the information on this website is correct, we do not warrant its completeness
-                or accuracy; nor do we commit to ensuring that the website remains available or that the material on the
-                website is kept up to date.</p>
-            <h4>Content Liability</h4>
+                                    or accuracy; nor do we commit to ensuring that the website remains available or that the material on the
+                                    website is kept up to date.</p>
+                <h4>Content Liability</h4>
                 <p>We shall have no responsibility or liability for any content appearing on your Web site. You agree to indemnify
-                and defend us against all claims arising out of or based upon your Website. No link(s) may appear on any
-                page on your Web site or within any context containing content or materials that may be interpreted as
-                libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or
-                other violation of, any third party rights.</p>
-            <h4>Disclaimer</h4>
+                                    and defend us against all claims arising out of or based upon your Website. No link(s) may appear on any
+                                    page on your Web site or within any context containing content or materials that may be interpreted as
+                                    libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or
+                                    other violation of, any third party rights.</p>
+                <h4>Disclaimer</h4>
                 <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website (including, without limitation, any warranties implied by law in respect of satisfactory quality, fitness for purpose and/or the use of reasonable care and skill). Nothing in this disclaimer will:</p>
                 <ol>
-                <li>limit or exclude our or your liability for death or personal injury resulting from negligence;</li>
-                <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
-                <li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
-                <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
+                    <li>limit or exclude our or your liability for death or personal injury resulting from negligence;</li>
+                    <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
+                    <li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
+                    <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
                 </ol>
                 <p>The limitations and exclusions of liability set out in this Section and elsewhere in this disclaimer: (a)
-                are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer or
-                in relation to the subject matter of this disclaimer, including liabilities arising in contract, in tort
-                (including negligence) and for breach of statutory duty.</p>
+                                    are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer or
+                                    in relation to the subject matter of this disclaimer, including liabilities arising in contract, in tort
+                                    (including negligence) and for breach of statutory duty.</p>
                 <p>To the extent that the website and the information and services on the website are provided free of charge,
-                we will not be liable for any loss or damage of any nature.</p>
-            <h4>Credit & Contact Information</h4>
-                <p>If you have any queries regarding any of our terms, please <a href="mailto:support@bsdadm.com">contact us</a>.</p>
-                
+                                    we will not be liable for any loss or damage of any nature.</p>
+                <h4>Contact Information</h4>
+                <p>If you have any queries regarding any of our terms, please
+                    <a href="mailto:support@bsdadm.com">contact us</a>.</p>
+
             </div>
             <div class="modal-footer">
                 <button class="modal-action modal-close btn green darken-1">Okay</button>
@@ -319,9 +372,13 @@
                 <h4 class="center">Your privacy is critically important to us.</h4>
                 Git Resume is located at:<br/>
                 <address>
-                    Git Resume<br/>992 Beaverdam Creek Road Gray Court <br />29645 - SC , United States of America</address>
+                    Git Resume, LLC<br/>992 Beaverdam Creek Rd. Gray Court
+                    <br/>29645 - SC , United States of America
+                </address>
 
-                <p>It is Git Resume's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="https://gitresume.bsdadm.com">https://gitresume.bsdadm.com</a> (hereinafter, "us", "we", or "https://gitresume.bsdadm.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
+                <p>It is Git Resume's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to
+                    <a href="https://gitresume.bsdadm.com">https://gitresume.bsdadm.com</a>
+                    (hereinafter, "us", "we", or "https://gitresume.bsdadm.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
                 <p>This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service.</p>
 
                 <h4>Website Visitors</h4>
@@ -342,9 +399,13 @@
                 <h4>Privacy Policy Changes</h4>
                 <p>Although most changes are likely to be minor, Git Resume may change its Privacy Policy from time to time, and in Git Resume's sole discretion. Git Resume encourages visitors to frequently check this page for any changes to its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute your acceptance of such change.</p>
 
-                            
-                <h4>Credit & Contact Information</h4>
-                <p>This privacy policy was created at <a style="color:inherit;text-decoration:none;" href="https://privacytermsgenerator.com/privacypolicy/" title="Privacy policy template generator" target="_blank">privacytermsgenerator.com</a>. If you have any questions about this Privacy Policy, please contact us via <a href="mailto:support@bsdadm.com">email</a> or <a href="tel:4233844095">phone</a>.</p>
+
+                <h4>Contact Information</h4>
+                <p>If you have any questions about this Privacy Policy, please contact us via
+                    <a href="mailto:support@bsdadm.com">email</a>
+                    or
+                    <a href="tel:4233844095">phone</a>.
+                </p>
 
             </div>
             <div class="modal-footer">
@@ -352,7 +413,7 @@
             </div>
         </div>
 
-        <!-- ENd of Modals -->
+        <!-- End of Modals -->
 
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
