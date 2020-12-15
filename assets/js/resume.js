@@ -1,7 +1,7 @@
 window.onload = function() {
 var proList    = document.querySelectorAll(".proLink")
 var userInput  = document.querySelector("#icon_telephone")
-var meow1 = document.querySelectorAll(".meow1")
+
 userInput = "amarz94"
 function resumeLoad() {
     var gitUser = "https://api.github.com/users/" + userInput
