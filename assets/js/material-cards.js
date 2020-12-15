@@ -104,7 +104,7 @@ $(function() {
                     <td>${response[i].forks_count}</td>
                     <td>${response[i].stargazers_count}</td>
                     <td>${response[i].open_issues}</td>
-                    <td><a href="${response[i].url}" class="btn purple darken-4">Visit</a></td>
+                    <td><a href="${response[i].html_url}" target="_blank" class="btn purple darken-4">Visit</a></td>
                 </tr>
                 `);
             }
