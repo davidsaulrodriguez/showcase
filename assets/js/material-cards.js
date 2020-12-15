@@ -14,8 +14,8 @@ $(function() {
         method: "GET",
         header: 'application/vnd.github.v3+json',
         data:{
-            client_id: '43047fd37fca2afb2331',
-            client_secret: '9021b23249c46c36eb12b1d6324e282ab01b755f'
+            client_id: '0d452db0c649148903b5',
+            client_secret: '298bbab2e58195464b3f37644da1b5623cada3f0'
         }
     }).then(function(response) {
         console.log(response)
@@ -71,8 +71,8 @@ $(function() {
             method: 'GET',
             header: 'application/vnd.github.v3+json',
             data: {
-                client_id: '43047fd37fca2afb2331',
-                client_secret: '9021b23249c46c36eb12b1d6324e282ab01b755f'
+                client_id: '0d452db0c649148903b5',
+                client_secret: '298bbab2e58195464b3f37644da1b5623cada3f0'
             }
         }).then(function(response) {
             $('#repos').html(`
