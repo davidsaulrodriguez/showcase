@@ -26,7 +26,7 @@ $(function() {
         let userAddr = $('#address').val();
         let phoneNum = $('#phone').val();
         let themeStyle = $('select').val();
-        let workTitle = $('work-title').val();
+        let workTitle = $('#work-title').val();
         localStorage.setItem("github-user", username);
         localStorage.setItem("user-email", userEmail);
         localStorage.setItem('phone', phoneNum);
