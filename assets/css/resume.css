@@ -1,22 +1,27 @@
 body{
 	background:#333333 url(https://image.freepik.com/free-photo/wall-texture_1194-5615.jpg);
 	margin:0px;
-	font: 400 12px/22px 'Open Sans', Verdana, Helvetica, sans-serif;
-	color:#e0e0e0;
+	font-family: 'Roboto', sans-serif;
+	color:#0092db;
 }
 h1{
-	font: 400 58px/60px 'Bree Serif', Georgia, serif;
-	 color:#6a6969;
+	font-size: 50px;
+	 color:#258cc0;
 	}
 h2{
-	font: 400 18px/22px 'Bree Serif', Georgia, serif;
-	 color:#6a6969;
+	font-size: 30px;
+	 color:#258cc0;
+	 text-align: center;
 	}
 h3{
-	font: 400 35px/35px 'Bree Serif', Georgia, serif;
-	 color:#6a6969;
+
+	 color:#00527a;
 	 float: left;
 	 padding-top: 45px;
+	}
+h4{
+	font-size: 20px;
+	color:#31baff;
 	}
 
 ul{
@@ -29,17 +34,22 @@ a {
 	 color:#6a6969;
 	}
 
+hr {
+	border-color: #1f1f1f;
+}
+
+
 
 #container{
 	width:950px;
 	margin:0px auto 300px auto;
-	background-color: #2e2e2ebd;
+	background-color: #2e2e2ed0;
 	overflow:auto;
 	padding-bottom:100px;
 }
 
 #header{
-	width:864px;
+	width:950px;
 	height:115px;
 	background-color:#222222;
 	padding:0px 43px;
@@ -54,7 +64,11 @@ a {
 	 padding-top:95px;
 	}
 
-#header #main-menu li{
+#main-menu a {
+	color: #00527a;
+}
+
+#main-menu li{
 	float:left;
 	list-style:none;
 	margin-left:27px;
@@ -68,11 +82,14 @@ a {
 #bio{
 	margin:0px 43px;
 	 padding-top:115px;
+	color:#dbf3ff;
+	
 }
 
 #bio h1{
 	text-align: center;
 }
+
 
 #bio .content{
 	overflow:auto;
@@ -91,20 +108,30 @@ a {
 
 #experience{
 	margin:0px 43px;
-	text-align: center;
+	color:#dbf3ff;
+	list-style-type: none;
+	width: 30%;
+	float: left;
+	
 }
+
+
 
 /****************************************************/
 /* PROJECT SECTION */
 /****************************************************/
 
-#projects{
+#projects {
 	margin:0px 43px;
-	text-align: center;
+	
+	margin:0px 43px;
+	list-style-type: none;
+	width: 50%;
+	float: left;
 }
 
-#proList {
-	list-style-type: none;
+#projects a {
+	color:#dbf3ff;
 }
 
 
