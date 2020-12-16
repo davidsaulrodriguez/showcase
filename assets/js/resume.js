@@ -1,24 +1,34 @@
 window.onload = function() {
 var proList    = document.querySelectorAll(".proLink")
-var userInput  = document.querySelector("#icon_telephone")
+let username = localStorage.getItem('github-user');
+let phoneNum = localStorage.getItem('phone');
+let userEmail = localStorage.getItem('user-email');
+let userProfile = localStorage.getItem('user-profile');
+let userAddr = localStorage.getItem('user-address');
+let workTitle = localStorage.getItem('work-title');
 
-userInput = "amarz94"
 function resumeLoad() {
-    var gitUser = "https://api.github.com/users/" + userInput
-    var gitRepo = "https://api.github.com/users/" + userInput + "/repos"
+    var gitUser = "https://api.github.com/users/" + username
+    var gitRepo = "https://api.github.com/users/" + username + "/repos"
+
     $.ajax({
         url: gitUser,
         method: "GET"
     }).then(function(response){
         console.log(response)
-        document.getElementById("introText").innerHTML = "My name is " + response.name + ", and I am a software developer"
-        document.getElementById("bioText").innerHTML = response.bio
+        document.getElementById("introText").innerHTML = "My name is " + response.name + ", and I am a " + workTitle + "."
+        document.getElementById("bioText").innerHTML = userProfile
+        $(".userSite").innerHTML = "Site: " + response.blog
         $("img").attr("src", response.avatar_url)
         $("img")
         .css('width', 'auto')
         .css('max-width', '250px')
         .css('height', 'auto')
         .css('max-height', '300px')
+        document.getElementById("address").textContent = "Address: " + userAddr
+        document.getElementById("emailInput").textContent = "Email: " + userEmail
+        document.getElementById("userPhone").textContent = "Phone Number: " + formatPhoneNumber(phoneNum)
+        document.getElementById("userSite").textContent = "Site: " + response.blog
         $.ajax({
             url: gitRepo,
             method: "GET"
@@ -32,6 +42,16 @@ function resumeLoad() {
         })
     })
 }
+function formatPhoneNumber(phoneNum) {
+    let cleaned = ('' + phoneNum).replace(/\D/g, '')
+    let match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      let intlCode = (match[1] ? '+1 ' : '')
+      return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('')
+    }
+    return null
+}
+
 resumeLoad();
 
 }
