@@ -66,6 +66,7 @@ $(function() {
 
     // Home page modals and mobile sidenav
     $('.sidenav').sidenav();
+    $('#about').modal();
     $('#terms').modal();
     $('#privacy').modal();
     $('select').formSelect();
