@@ -149,6 +149,8 @@ $(function() {
                     <td><a href="${response[j].html_url}" target="_blank" class="btn purple darken-4">Visit</a></td>
                 </tr>
             `)}
+
+            randomCatFact();
         })
 
         });
@@ -161,6 +163,16 @@ $(function() {
           return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('')
         }
         return null
+    }
+
+    function randomCatFact() {
+        $.ajax({
+            url: 'https://catfact.ninja/facts?limit=1',
+            method: 'GET'
+        }).then(function(response){
+            console.log(response.data[0].fact);
+            M.toast({html: `<span>Random Cat Fact: ${response.data[0].fact}</span>`})
+        })
     }
 
     $('#all-repos').modal();
