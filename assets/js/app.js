@@ -70,9 +70,7 @@ $(function() {
     $('#privacy').modal();
     $('select').formSelect();
     $('#catPic').modal({
-        onOpenEnd: randomCatFact(),
-        onOpenStart: randomCatFact()
+        onOpenEnd: randomCatFact()
     });
-    $('#multiple').modal();
     $('#painless').modal();
 });
