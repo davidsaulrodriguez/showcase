@@ -108,6 +108,8 @@
                                       <option value="" disabled selected>Choose your theme</option>
                                       <option value="resume.html" data-icon="./assets/imgs/dg-theme-icon.png">Amarz94's "Dark Grey" Theme</option>
                                       <option value="material-cards.html" data-icon="./assets/imgs/mc-theme-icon.png">David's "Material Cards" Theme</option>
+                                      <option value="resume1.html" data-icon="./assets/imgs/db-theme.JPG">Drew's "Outer Space" Theme</option>
+                                      <option value="theme.html" data-icon="./assets/imgs/mc-theme-icon.png">Michael's "Other" Theme</option>
                                     </select>
                                     <label>Choose A Theme</label>
                                   </div>
@@ -156,10 +158,9 @@
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h4 class="center light-blue-text">
-                                <i class="material-icons">mood</i>
+                                <a class="modal-trigger" href="#painless"><i class="material-icons">mood</i></a>    
                             </h4>
                             <h5 class="center">Painless Setup</h5>
-
                             <p class="light center">We do all the work for you. Simply fill out the form and submit it.</p>
                         </div>
                     </div>
@@ -167,21 +168,19 @@
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h4 class="center light-blue-text">
-                                <i class="material-icons">done_all</i>
+                                <a class="modal-trigger" href="#multiple"><i class="material-icons">done_all</i></a>
                             </h4>
                             <h5 class="center">Multiple Formats</h5>
-
-                            <p class="light center">Want to express just your uniqueness? Simply select a theme!</p>
+                            <p class="light center">Looking for a particular format? Simply select one of the several offered!</p>
                         </div>
                     </div>
 
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h4 class="center light-blue-text">
-                                <i class="material-icons">pets</i>
+                                <a class="modal-trigger" href="#catPic" onclick="randonCatFact()"><i class="material-icons">pets</i></a>
                             </h4>
-                            <h5 class="center">Like Cat Facts?</h5>
-
+                            <h5 class="center" id="black">Like Cat Facts?</h5>
                             <p class="light center">We supply everyone with a mind-blowing cat fact FREE with every resume generated!</p>
                         </div>
                     </div>
@@ -417,7 +416,37 @@
                 <button class="modal-action modal-close btn green darken-1">Okay</button>
             </div>
         </div>
+        
+        <div id="catPic" class="modal">
+            
+        </div>
 
+        <div id="multiple" class="modal">
+            <div class="modal-content">
+                <h4 class="center">Formats Offered</h4>
+                <ol>
+                    <li>Chronological</li>
+                    <li>Functional</li>
+                    <li>Conbination/Hybrid</li>
+                    <li>Targeted</li>
+                    <li>Professional</li>
+                    <li>Entry level</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close btn green">Close</a>
+            </div>
+        </div>
+
+        <div id="painless" class="modal">
+            <div class="modal-content col s12">
+                <h4 class="center">We're here to relieve stress<i class="material-icons right medium">mood</i></h4>
+                <p>By filling out the the form, selecting a theme, and format you'll be on your way to your next interview and awesome career in computer programming</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close btn green">Close</a>
+            </div>
+        </div>
         <!-- End of Modals -->
 
         <!--  Scripts-->
