@@ -18,7 +18,6 @@ $(function() {
             client_secret: '298bbab2e58195464b3f37644da1b5623cada3f0'
         }
     }).then(function(response) {
-        console.log(response)
         $('#profile-img').html(`
         <img src="${response.avatar_url}" alt="User Profile Image" aria-label="User Profile Image">
         <span class="card-title hide-on-med-and-up">${response.name}</span>
@@ -75,6 +74,7 @@ $(function() {
                 client_secret: '298bbab2e58195464b3f37644da1b5623cada3f0'
             }
         }).then(function(response) {
+            let count = response.length;
             $('#repos').html(`
             <div class="card-title center">My 5 Most Recently Created Repos</div>
             <p class="center">Sorted by newest</p>
@@ -85,7 +85,7 @@ $(function() {
                           <th>Name</th>
                           <th>Forks</th>
                           <th>Stars</th>
-                          <th>Open Issues</th>
+                          <th>Issues</th>
                           <th>Repo</th>
                       </tr>
                     </thead>
@@ -94,6 +94,9 @@ $(function() {
                       
                     </tbody>
                   </table>
+                </div>
+                <div class="center">
+                    <button data-target="all-repos" class="btn modal-trigger purple darken-4">View All ${count} Repos</button>
                 </div>
             </div>
             `);
@@ -108,6 +111,44 @@ $(function() {
                 </tr>
                 `);
             }
+
+            $('#all-repos').html(`
+            <div class="modal-content">
+                <div class="card-title center"><h5>My ${count} Public Repos</h5></div>
+                <p class="center">Sorted by newest</p>
+                <div class="row">
+                    <table classOkay="responsive-table centered">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Forks</th>
+                            <th>Stars</th>
+                            <th>Issues</th>
+                            <th>Repo</th>
+                        </tr>
+                        </thead>
+                
+                        <tbody id="all-repos-list">
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-action modal-close btn red">Close</button>
+            </div>
+            `);
+
+            for (let j = 0; j < response.length; j++) {
+                $('#all-repos-list').append(`
+                <tr>
+                    <td>${response[j].name}</td>
+                    <td>${response[j].forks_count}</td>
+                    <td>${response[j].stargazers_count}</td>
+                    <td>${response[j].open_issues}</td>
+                    <td><a href="${response[j].html_url}" target="_blank" class="btn purple darken-4">Visit</a></td>
+                </tr>
+            `)}
         })
 
         });
@@ -121,5 +162,7 @@ $(function() {
         }
         return null
     }
+
+    $('#all-repos').modal();
 
 })

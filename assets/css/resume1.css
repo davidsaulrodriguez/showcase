@@ -1,0 +1,126 @@
+body { 
+    background-image: url(../imgs/unsplash.jpg);
+    background-size: cover;
+	margin:0px;
+	font-family: 'Roboto', sans-serif;
+    color:#e0e0e0;
+}
+
+h1 {
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+	color: black;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+}
+
+h3 {
+	font: 400 35px/35px 'Bree Serif', Georgia, serif;
+	color: white;
+	float: left;
+	padding-top: 45px;
+}
+
+ul {
+	margin:0px;
+    padding:0px;
+}
+
+#proLink {
+	color: black;
+}
+
+a {
+	text-decoration:none;
+	color: white;
+}
+
+
+#container {
+	width:950px;
+	margin:0px auto 300px auto;
+    background-color: rgb(255, 250, 240);
+	overflow: auto;
+	padding-bottom:100px;
+}
+
+#header {
+	width: 864px;
+	height: 115px;
+	background-color: #222222;
+	padding: 0px 43px;
+	position: fixed;
+	top: 0px;
+	left: 50%;
+    margin: 0 0 0 -475px;
+    
+}
+
+#main-menu {
+	float: right;
+	padding-top: 89px;
+	}
+
+#header #main-menu li {
+	float:left;
+	list-style:none;
+    margin-left:30px;
+    font-size: 1.3em;
+	font-family:'Bree Serif', Georgia, serif;
+}
+
+/* Profile Section */
+
+#about {
+	margin: 0px 43px;
+	padding-top: 115px;
+}
+
+#about h1 {
+	text-align: center;
+}
+
+#bio .content {
+	overflow:auto;
+}
+
+.content img {
+	float:left;
+    margin-right:40px;
+    margin-bottom: 22px;
+    border:3px solid #222222;
+}
+
+#bioText {
+	color: black;
+}
+/* Contact Section */
+
+#experience {
+	margin:0px 43px;
+	text-align: center;
+}
+
+#expDiv {
+	color: black;
+	list-style-type: none;
+}
+
+/* Projects Section */
+
+#projects {
+	margin:0px 43px;
+	text-align: center;
+}
+
+#proList {
+	list-style-type: none;
+}
+
+#projects a {
+	color:black;
+}

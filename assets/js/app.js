@@ -36,9 +36,42 @@ $(function() {
         $('#user-form').attr('action', themeStyle).val();
     })
 
+    function randomCatFact(){
+        $.ajax ({
+            url: "https://catfact.ninja/facts?limit=1",
+            method: "GET"
+        }).then(function(response){
+            $('#catPic').html(`
+            <div class="modal-content">
+                <h4>Random Cat Fact</h4>
+                <p class="center" id="catFact">${response.data[0].fact}<br></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close btn green darken-1">Close</a>
+            </div>
+            `)
+        $.ajax ({
+            url: "https://api.giphy.com/v1/gifs/random?api_key=Nyx3oXobLYiAOuiG2y8PzdOrY5qZNDyd&tag=cats&rating=pg&limit=1",
+            method: "GET" 
+        }).then(function(response){
+            $('#catFact').append(`
+                <img src="${response.data.image_original_url}" alt="cat giphy">
+                `)
+            })
+        })
+    };
+
+    
+
+
     // Home page modals and mobile sidenav
     $('.sidenav').sidenav();
+    $('#about').modal();
     $('#terms').modal();
     $('#privacy').modal();
     $('select').formSelect();
+    $('#catPic').modal({
+        onOpenEnd: randomCatFact()
+    });
+    $('#painless').modal();
 });
