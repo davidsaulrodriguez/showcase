@@ -7,6 +7,10 @@ A free service to help you create a beautiful and interactive way to display you
 ## User Story
 I want an easy way to build beautiful developer profile pages and show off the latest repositories that a user has created and/or worked on simply by using their GitHub username.
 
+## Live Deployment
+
+[https://showcase.bsdadm.com][showcase]
+
 ## Screenshots
 ![Screenshot_01][ssmu]
 
@@ -35,6 +39,7 @@ Found a bug? Review any [open issues][open-issues] or create a [new issues here]
 ## License
 This project and all of its source code is released and permissively licensed under the [BSD 2 Clause][license] license.
 
+[showcase]: https://showcase.bsdadm.com
 [javascript]: https://www.javascript.com/
 [jquery]: https://jquery.com/
 [materializecss]: https://materializecss.com/
