@@ -170,7 +170,6 @@ $(function() {
             url: 'https://catfact.ninja/facts?limit=1',
             method: 'GET'
         }).then(function(response){
-            console.log(response.data[0].fact);
             M.toast({html: `<span>Random Cat Fact: ${response.data[0].fact}</span>`})
         })
     }
